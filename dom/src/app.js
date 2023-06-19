@@ -1,8 +1,6 @@
 import menu from "./data.js"
 
 const container = document.querySelector("#menu")
-const btn = document.querySelector("#add")
-const fieldInput = document.querySelector("#fieldInput")
 
 const render = () => {
     container.innerHTML = ""
@@ -25,12 +23,18 @@ const render = () => {
     })
 }
 
-btn.addEventListener("click", (e) => {
-    e.preventDefault()
-    menu.push(fieldInput.value)
+const app = () => {
+    const btn = document.querySelector("#add")
+    const fieldInput = document.querySelector("#fieldInput")
+
+    btn.addEventListener("click", (e) => {
+        e.preventDefault()
+        menu.push(fieldInput.value)
+        render()
+        fieldInput.value = ""
+    })
+
     render()
-    fieldInput.value = ""
-})
+}
 
-render()
-
+export default app
