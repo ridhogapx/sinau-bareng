@@ -1,4 +1,4 @@
-import data from "./data"
+import data from "./data.js"
 
 const container = document.querySelector("#menu")
 
