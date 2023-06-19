@@ -17,3 +17,12 @@ const menu = [
     }
 ]
 
+const container = document.querySelector("#menu")
+
+menu.forEach(data => {
+    const list = document.createElement("li")
+    list.innerText = data.name
+
+    container.appendChild(list)
+})
+
